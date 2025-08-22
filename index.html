@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manudha Thiyunuwan Photography</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLp3p7gB/9jA/L5QzH5E2t3e8Jj1cQ3v5x+GkP/Q4zT3l6s0z3t9Nn05E7p/M6v5+9oQo8q9l5z5y2t+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4B5563;
+            border-radius: 10px;
+            border: 2px solid #1F2937;
+        }
+        /* The background image is now a relative path */
+        .hero-bg {
+            background-image: url('assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900 text-gray-200 sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Manudha Thiyunuwan</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-cyan-400 transition-colors duration-300">About</a>
+                <a href="#portfolio" class="hover:text-cyan-400 transition-colors duration-300">Portfolio</a>
+                <a href="#services" class="hover:text-cyan-400 transition-colors duration-300">Services</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 hover:text-cyan-400 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 py-4 px-6 text-center">
+            <a href="#about" class="block py-2 hover:bg-gray-700 rounded-md">About</a>
+            <a href="#portfolio" class="block py-2 hover:bg-gray-700 rounded-md">Portfolio</a>
+            <a href="#services" class="block py-2 hover:bg-gray-700 rounded-md">Services</a>
+            <a href="#contact" class="block py-2 hover:bg-gray-700 rounded-md">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg h-screen flex items-center justify-center text-center text-white relative">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 animate-fadeInUp">
+                Capturing the World from Above
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl font-light mb-8 animate-fadeInUp animate-delay-200">
+                Professional Aerial & Drone Photography
+            </p>
+            <a href="#portfolio" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 transform hover:scale-105 shadow-lg">
+                View My Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-100">About Manudha Thiyunuwan</h2>
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <!-- The portrait image now uses a relative path -->
+                    <img src="assets/images/manudha-portrait.jpg" alt="Manudha Thiyunuwan" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="lg:w-1/2">
+                    <p class="text-lg text-gray-400 leading-relaxed mb-6">
+                        Hello, I'm Manudha, a passionate photographer and videographer specializing in aerial and drone work. My journey began with a fascination for seeing the world from a new perspective, and that passion has driven me to capture breathtaking landscapes, dynamic events, and unique moments from above.
+                    </p>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        I believe that every photo tells a story. With a keen eye for detail and a commitment to quality, I strive to create visually stunning and emotionally resonant images for my clients. Whether it's a promotional video for a resort, a scenic tour of a city, or a special event, I am dedicated to delivering a one-of-a-kind visual experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio/Gallery Section -->
+    <section id="portfolio" class="bg-gray-800 py-16 md:py-24">
+        <div class="container mx-auto px-6 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-100">My Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item shadow-lg">
+                    <!-- Images in the gallery now use relative paths -->
+                    <img src="assets/images/photo-1.jpg" alt="Aerial Landscape" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <p class="text-sm font-semibold">Stunning Aerial View of Chilaw</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item shadow-lg">
+                    <img src="assets/images/photo-2.jpg" alt="Resort Drone Shot" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <p class="text-sm font-semibold">Resort Promotional Video Still</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item shadow-lg">
+                    <img src="assets/images/photo-3.jpg" alt="Event Videography" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <p class="text-sm font-semibold">Ananda College School Event</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item shadow-lg">
+                    <img src="assets/images/photo-4.jpg" alt="Coastal Scenery" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <p class="text-sm font-semibold">Coastal Drone View</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item shadow-lg">
+                    <img src="assets/images/photo-5.jpg" alt="Sunrise Over Hills" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <p class="text-sm font-semibold">Sunrise Over Rolling Hills</p>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item shadow-lg">
+                    <img src="assets/images/photo-6.jpg" alt="Cityscape at Night" class="w-full h-auto object-cover">
+                    <div class="gallery-overlay">
+                        <p class="text-sm font-semibold">Night Cityscape from Above</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-100">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-xl transition-transform transform hover:scale-105">
+                    <div class="text-blue-500 mb-4 text-4xl text-center">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-100 text-center">Aerial Photography</h3>
+                    <p class="text-gray-400 text-center">
+                        High-resolution aerial photos for real estate, commercial projects, and landscape documentation.
+                    </p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-xl transition-transform transform hover:scale-105">
+                    <div class="text-blue-500 mb-4 text-4xl text-center">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-100 text-center">Drone Videography</h3>
+                    <p class="text-gray-400 text-center">
+                        Smooth, cinematic 4K drone videos for promotions, events, and storytelling.
+                    </p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-xl transition-transform transform hover:scale-105">
+                    <div class="text-blue-500 mb-4 text-4xl text-center">
+                        <i class="fas fa-thumbtack"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-100 text-center">Specialized Projects</h3>
+                    <p class="text-gray-400 text-center">
+                        Custom photography and videography for unique events and creative concepts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 py-16 md:py-24">
+        <div class="container mx-auto px-6 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-100">Contact Me</h2>
+            <div class="max-w-xl mx-auto bg-gray-800 p-8 md:p-12 rounded-2xl shadow-xl">
+                <form id="contact-form">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-400 font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-400 font-semibold mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-400 font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 transform hover:scale-105 shadow-lg">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <div id="contact-message" class="mt-6 text-center text-green-400 font-semibold hidden">
+                    Thank you! Your message has been sent.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Manudha Thiyunuwan. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                    <i class="fab fa-youtube text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.getElementById(this.getAttribute('href').substring(1)).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking a link
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Handle form submission (without a backend)
+            const contactForm = document.getElementById('contact-form');
+            const contactMessage = document.getElementById('contact-message');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                contactForm.reset();
+                contactMessage.classList.remove('hidden');
+                setTimeout(() => {
+                    contactMessage.classList.add('hidden');
+                }, 5000); // Hide message after 5 seconds
+            });
+        });
+    </script>
+
+</body>
+</html>

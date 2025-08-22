@@ -1,1 +1,0 @@
-# Manudha-Thiyunuwan-Photography
